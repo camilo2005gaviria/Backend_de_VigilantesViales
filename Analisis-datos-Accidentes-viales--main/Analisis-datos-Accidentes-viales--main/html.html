@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ALERTA VIAL</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body> 
+    
+<div class="escena-humo">
+    <div class="vapor v1"></div>
+    <div class="vapor v2"></div>
+    <div class="vapor v3"></div>
+    <div class="particulas"></div>
+</div>
+    <div class="espacio">
+
+        <h2 class="tit "> CADA </h2>
+        <h2 class="tit neonrojo " > CIFRA </h2>
+        <h2 class="tit "> IMPORTA </h2>
+
+    </div>
+
+    <div class="linea">
+        <div>
+            <h2>400.000</h2>
+            <p>TOTAL REGISTROS</p>
+        </div>
+        <div>
+            <h2>20.000</h2>
+            <p> VICTIMAS FATALES</p>
+        </div>
+        <div>
+            <h2>400.000</h2>
+            <p>HERIDOS</p>
+        </div>
+        <div>
+            <h2>229.000</h2>
+            <p>MOTOS</p>
+        </div>
+    </div>
+
+    <div id="hola">
+        <h2>Tasa de Accidentes</h2>
+
+    </div>
+    <div class="dashboard-grafico">
+    <h2 style="font-family: Impact; letter-spacing: 2px;">DISTRIBUCIÓN POR TIPO DE VEHÍCULO</h2>
+    
+    <div class="eje-barras">
+        <div class="contenedor-barra">
+            <span class="valor-barra">2.1k</span>
+            <div class="barra-v" style="height: 40%;"></div>
+            <span class="etiqueta-barra">Automóvil</span>
+        </div>
+
+        <div class="contenedor-barra">
+            <span class="valor-barra">0.4k</span>
+            <div class="barra-v" style="height: 10%;"></div>
+            <span class="etiqueta-barra">Bus</span>
+        </div>
+
+        <div class="contenedor-barra">
+            <span class="valor-barra">1.0k</span>
+            <div class="barra-v" style="height: 25%;"></div>
+            <span class="etiqueta-barra">Camioneta</span>
+        </div>
+
+        <div class="contenedor-barra">
+            <span class="valor-barra">5.7k</span>
+            <div class="barra-v" style="height: 90%;"></div>
+            <span class="etiqueta-barra">Motocicleta</span>
+        </div>
+
+        <div class="contenedor-barra">
+            <span class="valor-barra">0.2k</span>
+            <div class="barra-v" style="height: 5%;"></div>
+            <span class="etiqueta-barra">Tractocamión</span>
+        </div>
+    </div>
+</div>
+    
+
+    <h3 class="vehiculos">Motos</h3>
+    <progress value="60" max="100"></progress> 60%
+
+    <h3 class="vehiculos">Carros</h3>
+    <progress value="30" max="100"></progress> 30%
+
+    <h3 class="vehiculos">Camiones</h3>
+    <progress value="10" max="100"></progress> 10%
+
+
+    <p>Análisis de 406,540 registros de accidentes viales en Colombia.</p>
+    <p>Necesitamos actuar</p>
+
+    <div style="background-color: red; height: 80px;"></div>
+
+    <!-- RESUMEN -->
+    <section>
+        <h2>Resumen</h2>
+
+        <div>
+            <h3>Total Accidentes</h3>
+            <p></p>
+        </div>
+
+        <div>
+            <h3>Accidentes con Heridos</h3>
+            <p></p>
+        </div>
+
+        <div>
+            <h3>Tasa de Accidentes (%)</h3>
+            <p></p>
+        </div>
+    </section>
+
+
+    <!-- FILTROS -->
+    <section>
+        <h2>Filtros</h2>
+
+        <form>
+            <label>Departamento:</label>
+            <input type="text" name="departamento">
+            <br><br>
+
+            <label>Municipio:</label>
+            <input type="text" name="municipio">
+            <br><br>
+
+            <label>Tipo de Vehículo:</label>
+            <select name="tipo">
+                <option value="">Todos</option>
+                <option value="Carro">Carro</option>
+                <option value="Moto">Moto</option>
+                <option value="Camión">Camión</option>
+            </select>
+            <br><br>
+
+            <button type="submit">Filtrar</button>
+        </form>
+    </section>
+
+</body>
+</html>

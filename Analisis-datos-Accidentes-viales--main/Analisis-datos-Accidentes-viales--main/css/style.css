@@ -1,0 +1,212 @@
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    --primary-color: white;
+    --secundary-color: red;
+}
+
+.barra {
+    background-color: var(--primary-color);
+    height: 80px;
+    margin: 40px 0;
+}
+
+.espacio {
+    margin: 100px;
+}
+
+.tit {
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 300; 
+    letter-spacing: -5px; 
+    font-size: 200px;
+    margin: -50px 0;
+}
+
+.neonrojo  {
+    color: red; 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 300; 
+    letter-spacing: -5px; 
+    text-shadow:
+    0 0 2px black,
+    0 0 5px black,
+    0 0 100px #ff0000;
+}
+
+.vehiculos {
+    color: white;
+    font-size: 50px;
+    margin: 20px 0 10px;
+}
+.linea {
+    display: flex;
+    width: 100%;
+    height: 140px;
+    font-size: 22px ;
+}
+
+.linea div {
+    flex: 1;
+    margin: 0 2px; 
+    background: rgba(255, 0, 0, 0.595);
+}
+
+.grafico {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    height: 300px;
+    padding: 20px;
+background: #111;
+}
+
+
+
+
+/* Contenedor del gráfico (el cuadro oscuro) */
+.dashboard-grafico {
+    background-color: #0a0a0a; /* Un negro más profundo */
+    margin: 50px auto;
+    padding: 40px;
+    border: 1px solid #222;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 1000px;
+    color: white;
+}
+
+.eje-barras {
+    display: flex;
+    align-items: flex-end; 
+    justify-content: space-around;
+    height: 300px; /* Altura del área de dibujo */
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+.contenedor-barra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    height: 100%; /* Importante para que el align-items: flex-end funcione */
+    justify-content: flex-end;
+}
+
+/* LA BARRA: Aquí estaba el detalle */
+.barra-v {
+    width: 50px; /* Un poco más gruesa */
+    background: #ff0000; /* Rojo sólido para que se vea sí o sí */
+    border-radius: 4px 4px 0 0; /* Redondeado arriba */
+    transition: height 0.8s ease-out;
+}
+
+/* Etiquetas */
+.etiqueta-barra {
+    font-size: 14px;
+    margin-top: 25px; /* Más espacio para que no choque con la línea */
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.valor-barra {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #ff0000; /* Valor en rojo para resaltar */
+}
+
+
+/* Contenedor principal */
+.escena-humo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    z-index: -1;
+    overflow: hidden;
+    /* Extra: Un ligero viñeteado para centrar la atención */
+    background: radial-gradient(circle, rgba(20,0,0,1) 0%, black 100%);
+}
+
+/* Base de las nubes de humo (Intensificadas) */
+.vapor {
+    position: absolute;
+    bottom: -200px;
+    width: 400px; /* Más grandes */
+    height: 900px;
+    background: radial-gradient(circle, rgba(120, 10, 10, 0.8) 0%, rgba(0, 0, 0, 0) 65%);
+    filter: blur(50px);
+    border-radius: 50%;
+    opacity: 0.4; 
+    mix-blend-mode: screen;
+}
+
+/* Variaciones de nubes */
+.v1 { left: -15%; animation: flotar 18s infinite ease-in-out; }
+
+.v2 { 
+    left: 25%; 
+    animation: flotar 28s infinite ease-in-out -5s;
+    background: radial-gradient(circle, rgba(200, 0, 0, 0.5) 0%, rgba(0,0,0,0) 70%); 
+}
+
+.v3 { right: -15%; animation: flotar 22s infinite ease-in-out -2s; }
+
+/* Animación de humo (Más lenta y expansiva) */
+@keyframes flotar {
+    0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0; }
+    20% { opacity: 0.7; }
+    80% { opacity: 0.4; }
+    100% { transform: translateY(-900px) scale(3) rotate(140deg); opacity: 0; }
+}
+
+/* Cenizas Caóticas (Sin cuadrícula) */
+.particulas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    /* Puntos generados aleatoriamente en la pantalla */
+    box-shadow: 
+        15vw 80vh  #ada9a9, 35vw 90vh red, 55vw 70vh  #ada9a9, 85vw 85vh  #ada9a9,
+        5vw 60vh red, 45vw 40vh #fff, 75vw 30vh  #ada9a9, 95vw 10vh  #ada9a9,
+        22vw 15vh #fff, 68vw 45vh red, 33vw 22vh #ada9a9, 88vw 55vh #ada9a9;
+    animation: ascensoCaotico 12s linear infinite;
+    opacity: 0.7;
+}
+
+/* Segunda capa de ceniza para profundidad */
+.particulas::after {
+    content: '';
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    box-shadow: 
+        10vw 10vh #ada9a9, 30vw 30vh red, 50vw 50vh #ada9a9, 70vw 70vh #ada9a9,
+        90vw 90vh red, 20vw 40vh  #ada9a9, 40vw 60vh #ada9a9, 60vw 80vh  #ada9a9;
+    opacity: 0.5;
+}
+
+/* Animación de cenizas con zigzag natural */
+@keyframes ascensoCaotico {
+    0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10% { opacity: 1; }
+    50% { transform: translateY(50vh) translateX(30px); }
+    90% { opacity: 1; }
+    100% { transform: translateY(-10vh) translateX(-20px); opacity: 0; }
+}
