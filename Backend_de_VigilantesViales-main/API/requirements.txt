@@ -1,0 +1,14 @@
+# API & servidor
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+
+# ORM y base de datos
+sqlalchemy==2.0.36
+mysql-connector-python==9.1.0
+
+# Validación (incluido en FastAPI, versión explícita para reproducibilidad)
+pydantic==2.10.3
+
+# Utilidades de datos (requerido por el script de migración)
+pandas==2.2.3
+openpyxl==3.1.5
